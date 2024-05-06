@@ -21,3 +21,17 @@ body {
   margin-bottom: 60px;
 }
 
+#gpt35 {
+    width: 40%;
+    float: left;
+    background-color: aqua;
+    margin-left: 7.5%;
+    margin-right: 5%;
+}
+
+#gpt35ft {
+    float: left;
+    width: 40%;
+    background-color: darkgreen;
+    margin-right: 7.5%;
+}
