@@ -23,15 +23,27 @@ body {
 
 #gpt35 {
     width: 40%;
+    height: 600px;
     float: left;
-    background-color: aqua;
+    background-color: lightblue;
     margin-left: 7.5%;
     margin-right: 5%;
 }
 
 #gpt35ft {
-    float: left;
     width: 40%;
-    background-color: darkgreen;
+    height: 600px;
+    float: left;
+    background-color: lightcoral;
     margin-right: 7.5%;
+    margin-bottom: 30px;
+}
+
+#chatbox {
+    width: 85%;
+    height: 50px;
+    background-color: lightgreen;
+    clear: both;
+    margin-top: 10%;
+    margin-left: 7.5%;
 }
