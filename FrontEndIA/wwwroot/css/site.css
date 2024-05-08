@@ -47,3 +47,67 @@ body {
     margin-top: 10%;
     margin-left: 7.5%;
 }
+
+.total {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0px;
+}
+.tabla {
+    width: 100%;
+}
+.cels {
+    border: 2px solid #802429;
+    width: 90%;
+    height: 125px;
+}
+.cels2 {
+    border: 2px solid #802429;
+    width: 10%;
+    padding: 8px;
+}
+.answer {
+    width: 50%;
+    border: 2px solid #802429;
+    background: white;
+    padding: 8px;
+    height: 500px;
+}
+
+#top {
+    font-weight: bold;
+    color: white;
+
+    background: #802429;
+    border-radius: 20px 20px 0px 0px;
+
+    height: 40px;
+    padding: 8px;
+}
+.mid {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+
+    background: #802429;
+
+    height: 40px;
+    padding: 8px;
+}
+#bot {
+    font-weight: bold;
+    color: white;
+
+    background: #802429;
+    border-radius: 0px 0px 20px 20px;
+
+    height: 40px;
+    padding: 8px;
+}
+
+#usrbox {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: 1px solid white;
+}

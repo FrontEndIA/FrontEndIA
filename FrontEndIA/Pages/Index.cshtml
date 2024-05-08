@@ -3,20 +3,32 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div id="content">
-    <div id="gpt35">
-        <h3> Modelo GPT 3.5 Turbo</h3>
-        <p> Aquí va el chat del modelo no entrenado.</p>
-    </div>
-
-    <div id="gpt35ft">
-        <h3> Modelo GPT 3.5 Turbo Entrenado</h3>
-        <p> Aquí va el chat del modelo entrenado.</p>
-    </div>
-
-    <div id="chatbox">
-        <p> Aqui va la caja para escribir el mensaje</p>
-    </div>
+<div class="total">
+    <table class="tabla">
+        <tr>
+            <th id="top" colspan="2"> Asistente de Tramitación - Pruebas de funcionamiento </th>
+        </tr>
+        <tr>
+            <td class="cels" rowspan="2">
+                <textarea id="usrbox" name="mensaje" placeholder="Mensaje al Asistente..."></textarea>
+            </td>
+            <td class="cels2" style="background-color: rgba(85, 152, 255, 0.15);"> ➡ Enviar </td>
+        </tr>
+        <tr>
+            <td class="cels2" style="background-color: rgba(0, 0, 0, 0.05);"> ➕ Nueva conversación </td>
+        </tr>
+    </table>
+    <table class="tabla">
+        <tr>
+            <td class="mid"> GPT-3.5 Turbo </td>
+            <td class="mid"> GPT-3.5 Turbo (entrenado) </td>
+        </tr>
+        <tr>
+            <td class="answer"> Respuesta GPT-3.5 Turbo </td>
+            <td class="answer"> Respuesta GPT-3.5 Turbo (entrenado) </td>
+        </tr>
+        <tr>
+            <th id="bot" colspan="2"> ⭐ Valorar las respuestas (pulse aquí) </th>
+        </tr>
+    </table>
 </div>
-    
