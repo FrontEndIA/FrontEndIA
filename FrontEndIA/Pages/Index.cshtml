@@ -9,13 +9,13 @@
             <th id="top" colspan="2"> Asistente de Tramitación - Pruebas de funcionamiento </th>
         </tr>
         <tr>
-            <td class="cels" rowspan="2">
+            <td class="user" rowspan="2">
                 <textarea id="usrbox" name="mensaje" placeholder="Mensaje al Asistente..."></textarea>
             </td>
-            <td class="cels2" style="background-color: rgba(85, 152, 255, 0.15);"> ➡ Enviar </td>
+            <td class="cels1"> <button type="submit" id="button1"> ➡ Enviar </button> </td>
         </tr>
         <tr>
-            <td class="cels2" style="background-color: rgba(0, 0, 0, 0.05);"> ➕ Nueva conversación </td>
+            <td class="cels2"> <button type="reset" id="button2"> ➕ Nueva conversación </button> </td>
         </tr>
     </table>
     <table class="tabla">
@@ -28,7 +28,25 @@
             <td class="answer"> Respuesta GPT-3.5 Turbo (entrenado) </td>
         </tr>
         <tr>
-            <th id="bot" colspan="2"> ⭐ Valorar las respuestas (pulse aquí) </th>
+            <td class="cels3" colspan="2"> <button id="button3"> ⭐ Valorar las respuestas </button> </td>
+        </tr>
+        <tr>
+            <th id="bot" colspan="2">  </th>
         </tr>
     </table>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>¿Qué Asistente ha respondido mejor?</p>
+        <div>
+            <table>
+                <tr>
+                    <td class="cels4"> <button type="submit" id="button4"> GPT-3.5 Turbo </button> </td>
+                    <td class="cels4"> <button type="submit" id="button5"> GPT-3.5 Turbo (entrenado) </button> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
