@@ -35,6 +35,11 @@ enviarBtn.addEventListener("click", function () {
 
     // Enviar mensaje a la API de OpenAI para el segundo asistente
     enviarMensaje(mensaje, 'URL_de_la_API_2', 'clave_de_API_2', 'answer2');
+
+    // Deshabilitar el textarea después de enviar el mensaje
+    document.getElementById("usrbox").disabled = true;
+
+    enviarBtn.disabled = false;
 });
 
 // Función para enviar un mensaje a la API de OpenAI
@@ -51,8 +56,8 @@ function enviarMensaje(mensaje, apiURL, apiKey, respuestaId) {
 
 
 // Supongamos que recibes las respuestas de los modelos de IA y las guardas en estas variables:
-var respuestaModelo1 = "Esta es la respuesta del primer modelo";
-var respuestaModelo2 = "Esta es la respuesta del segundo modelo";
+var respuestaModelo1 = " ";
+var respuestaModelo2 = " ";
 
 // Actualiza el contenido del primer <div> con id "answer1"
 document.getElementById("answer1").innerText = respuestaModelo1;
@@ -69,6 +74,10 @@ nuevaConversacionBtn.addEventListener("click", function () {
 
     // Limpiar el contenido de las respuestas de los asistentes
     limpiarRespuestas();
+
+    document.getElementById("usrbox").disabled = false;
+
+    enviarBtn.disabled = false;
 });
 
 // Función para limpiar el contenido de las respuestas de los asistentes
