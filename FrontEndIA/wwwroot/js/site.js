@@ -39,7 +39,7 @@ enviarBtn.addEventListener("click", function () {
     // Deshabilitar el textarea después de enviar el mensaje
     document.getElementById("usrbox").disabled = true;
 
-    enviarBtn.disabled = false;
+    enviarBtn.disabled = true;
 });
 
 // Función para enviar un mensaje a la API de OpenAI
