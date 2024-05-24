@@ -27,10 +27,10 @@ enviarBtn.addEventListener("click", async function () {
     var mensaje = document.getElementById("usrbox").value;
 
     // Enviar mensaje a la API de OpenAI para el primer asistente (GPT-3.5 Turbo)
-    await handleMessage('https://api.example.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo', mensaje, 'answer1');
+    await handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo', mensaje, 'answer1');
 
     // Enviar mensaje a la API de OpenAI para el segundo asistente (GPT-3.5 Turbo entrenado)
-    await handleMessage('https://api.example.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo_entrenado', mensaje, 'answer2');
+    await handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo_entrenado', mensaje, 'answer2');
 
     document.getElementById("usrbox").disabled = true;
     enviarBtn.disabled = true;
