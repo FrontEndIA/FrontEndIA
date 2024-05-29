@@ -26,14 +26,22 @@ var enviarBtn = document.getElementById("button1");
 enviarBtn.addEventListener("click", async function () {
     var mensaje = document.getElementById("usrbox").value;
 
-    // Enviar mensaje a la API de OpenAI para el primer asistente (GPT-3.5 Turbo)
-    await handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo', mensaje, 'answer1');
-
-    // Enviar mensaje a la API de OpenAI para el segundo asistente (GPT-3.5 Turbo entrenado)
-    await handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo_entrenado', mensaje, 'answer2');
+    if (mensaje.trim() === "") {
+        alert("El mensaje no puede estar vacío.");
+        return;
+    }
 
     document.getElementById("usrbox").disabled = true;
     enviarBtn.disabled = true;
+
+    try {
+        await Promise.all([
+            handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo', mensaje, 'answer1'),
+            handleMessage('https://api.caceres.com/api/AssistantOpenAiV2/v2', 'clave_api_gpt35_turbo_entrenado', mensaje, 'answer2')
+        ]);
+    } catch (error) {
+        console.error('Error al enviar el mensaje:', error);
+    }
 });
 
 async function handleMessage(apiURL, apiKey, mensaje, respuestaId) {
@@ -56,6 +64,9 @@ async function createThread(apiURL, apiKey) {
             'Authorization': `Bearer ${apiKey}`
         }
     });
+    if (!response.ok) {
+        throw new Error('Error al crear el hilo');
+    }
     const data = await response.json();
     return data.threadId;
 }
@@ -71,6 +82,9 @@ async function createMessage(apiURL, apiKey, threadId, mensaje) {
             content: mensaje
         })
     });
+    if (!response.ok) {
+        throw new Error('Error al crear el mensaje');
+    }
     const data = await response.json();
     return data.messageId;
 }
@@ -83,6 +97,9 @@ async function retrieveMessage(apiURL, apiKey, threadId, messageId) {
             'Authorization': `Bearer ${apiKey}`
         }
     });
+    if (!response.ok) {
+        throw new Error('Error al recuperar el mensaje');
+    }
     const data = await response.json();
     return data.content;
 }
@@ -100,3 +117,19 @@ function limpiarRespuestas() {
     document.getElementById("answer2").innerText = "";
 }
 
+// Manejar las valoraciones
+var button4 = document.getElementById("button4");
+var button5 = document.getElementById("button5");
+
+button4.addEventListener("click", function () {
+    valorarRespuesta("GPT-3.5 Turbo");
+});
+
+button5.addEventListener("click", function () {
+    valorarRespuesta("GPT-3.5 Turbo entrenado");
+});
+
+function valorarRespuesta(asistente) {
+    alert(`Has valorado que ${asistente} ha respondido mejor.`);
+    modal.style.display = "none";
+}
