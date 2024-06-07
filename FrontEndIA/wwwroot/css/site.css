@@ -78,7 +78,7 @@ body {
     width: 90%;
     height: 125px;
 }
-#usrbox {
+#userMessage {
     width: 100%;
     height: 100%;
     resize: none;
@@ -103,7 +103,7 @@ body {
     justify-content: center;
     box-sizing: border-box;
 }
-#button1, #button2 {
+#sendRequest, #newRequest {
     width: 100%;
     height: 100%;
     display: block;
@@ -111,14 +111,16 @@ body {
     margin: 0;
 }
 
-#answer1 {
+#response {
     width: 50%;
     border: 2px solid #802429;
     background: white;
     padding: 8px;
     height: 500px;
+    overflow: auto;
+    font-size: 14px;
 }
-#answer2 {
+#response2 {
     width: 50%;
     border: 2px solid #802429;
     background: white;
@@ -192,3 +194,23 @@ body {
     padding: 0;
     margin: 0;
 }
+
+.message {
+    margin: 2px 0; /* Reducir el margen entre los mensajes */
+    padding: 10px; /* Asegurar un relleno interno para los mensajes */
+}
+
+    /* Estilo para los mensajes del usuario */
+    .message.user {
+        text-align: left; /* Alinear el texto a la izquierda */
+        align-self: flex-start; /* Alinear a la izquierda */
+        display: inline-block;
+        word-wrap: break-word; /* Asegurar que el texto se ajuste en múltiples líneas */
+        height: auto;
+    }
+
+    /* Estilo para los mensajes del asistente */
+    .message.assistant {
+        text-align: right; /* Alinear el texto a la derecha */
+        align-self: flex-end; /* Alinear a la derecha */
+    }
